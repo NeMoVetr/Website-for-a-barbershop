@@ -1,0 +1,147 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">{{'Регистрация'}}</div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+
+                                <!-- Поля из формы UserRegisterForm -->
+                                <p>
+                                    {{ user_form.username.label_tag }}
+                                    {{ user_form.username }}
+                                    {% if user_form.username.errors %}
+                                        <div class="text-danger">
+                                            {{ user_form.username.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_form.first_name.label_tag }}
+                                    {{ user_form.first_name }}
+                                    {% if user_form.first_name.errors %}
+                                        <div class="text-danger">
+                                            {{ user_form.first_name.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_form.last_name.label_tag }}
+                                    {{ user_form.last_name }}
+                                    {% if user_form.last_name.errors %}
+                                        <div class="text-danger">
+                                            {{ user_form.last_name.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+
+                                <!-- Поля из формы UserDateForm -->
+                                <p>
+                                    {{ user_data.patronymic.label_tag }}
+                                    {{ user_data.patronymic }}
+                                    {% if user_data.patronymic.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.patronymic.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_data.date_of_birth.label_tag }}
+                                    {{ user_data.date_of_birth }}
+                                    {% if user_data.date_of_birth.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.date_of_birth.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_data.address.label_tag }}
+                                    {{ user_data.address }}
+                                    {% if user_data.address.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.address.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+
+                                <!-- Добавляем недостающие поля UserDateForm -->
+                                <p>
+                                    {{ user_data.gender.label_tag }}
+                                    {{ user_data.gender }}
+                                    {% if user_data.gender.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.gender.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_data.interests.label_tag }}
+                                    {{ user_data.interests }}
+                                    {% if user_data.interests.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.interests.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_data.url_vk.label_tag }}
+                                    {{ user_data.url_vk }}
+                                    {% if user_data.url_vk.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.url_vk.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_data.blood_type.label_tag }}
+                                    {{ user_data.blood_type }}
+                                    {% if user_data.blood_type.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.blood_type.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_data.Rh_factor.label_tag }}
+                                    {{ user_data.Rh_factor }}
+                                    {% if user_data.Rh_factor.errors %}
+                                        <div class="text-danger">
+                                            {{ user_data.Rh_factor.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+
+                                <!-- Поля для паролей с валидацией -->
+                                <p>
+                                    {{ user_form.password1.label_tag }}
+                                    {{ user_form.password1 }}
+                                    {% if user_form.password1.errors %}
+                                        <div class="text-danger">
+                                            {{ user_form.password1.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    {{ user_form.password2.label_tag }}
+                                    {{ user_form.password2 }}
+                                    {% if user_form.password2.errors %}
+                                        <div class="text-danger">
+                                            {{ user_form.password2.errors }}
+                                        </div>
+                                    {% endif %}
+                                </p>
+
+                                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

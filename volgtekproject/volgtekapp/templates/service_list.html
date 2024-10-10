@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Список услуг</h1>
+    <ul>
+        {% for service in services %}
+            <li>
+                <img src="{{ service.image }}" alt="{{ service.name }}" class="thumbnail">
+                <h2>{{ service.name }}</h2>
+                <p>{{ service.description }}</p>
+                <p>Стоимость: {{ service.price }} руб.</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
