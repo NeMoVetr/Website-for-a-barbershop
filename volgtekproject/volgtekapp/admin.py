@@ -8,15 +8,19 @@ from .models import UserDate, Service, Hall
 class UserDateAdmin(admin.ModelAdmin):
     list_display = ('user_name', 'date_of_birth', 'address', 'gender', 'interests', 'url_vk', 'blood_type', 'Rh_factor')
 
+    search_fields = ('user_name', 'date_of_birth','address', 'gender', 'interests', 'url_vk', 'blood_type', 'Rh_factor')
+
     def user_name(self, obj):
         return f'{obj.user.first_name} {obj.user.last_name}'
 
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('hall', 'name', 'description', 'price')
+    search_fields = ('hall', 'name', 'description', 'price')
 
 class HallAdmin(admin.ModelAdmin):
     list_display = ('number', )
+    search_fields = ('number', )
 
 
 
