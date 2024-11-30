@@ -1,0 +1,163 @@
+.sticker {
+    color: white; /* Цвет текста белый */
+    padding: 5px 10px; /* Внутренний отступ */
+    display: inline-block; /* Чтобы элемент был только размером текста */
+    background-color: #800080; /* Прозрачный фон */
+    font-weight: bold; /* Жирный текст */
+}
+
+
+.container {
+    min-height: calc(100% - 56px);
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Карточка растягивается на всю высоту ячейки */
+}
+
+.card-body {
+    flex-grow: 1; /* Контент в body растягивается */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-title {
+    min-height: 80px; /* Устанавливаем минимальную высоту для заголовка */
+}
+
+.rating, .card-text, .btn {
+    margin-top: auto; /* Элементы будут на своем месте внизу карточки */
+}
+
+.tab-content li img {
+    max-width: 100%;
+    height: auto;
+}
+
+small {
+    color: lightgray;
+}
+
+.right_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрируем по вертикали */
+}
+
+.rating {
+    display: flex; /* Для расположения звезд в ряд */
+}
+
+
+.basket {
+
+    padding: 50px 0; /* Отступы сверху и снизу для блока корзины */
+}
+
+.basket i {
+    margin-right: 100px; /* Отступ справа для иконки */
+}
+
+.basket span {
+    margin-left: 20px; /* Отступ слева для текста */
+}
+
+.basket i + span {
+    margin-left: 100px; /* Отступ между иконкой и текстом */
+}
+
+
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    border: 2px solid #007bff;
+}
+
+.right_info {
+    margin-top: 20px;
+}
+
+.rating i {
+    color: gold;
+}
+
+
+.welcome-section {
+    background: linear-gradient(to right, #ffefd5, #f9e4c8);
+    color: #333;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4d2600;
+}
+
+.welcome-text {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.welcome-btn {
+    margin-top: 30px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    background-color: #4d2600;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.welcome-btn:hover {
+    background-color: #703c14;
+    color: #fff;
+}
+
+.table-bordered th, .table-bordered td {
+    text-align: center; /* Центрирование текста */
+    padding: 10px; /* Отступы */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Полосатость */
+}
+
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

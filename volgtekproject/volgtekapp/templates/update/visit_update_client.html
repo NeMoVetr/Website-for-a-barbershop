@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block title %} Редактирование моего визита {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">Редактирование посещения</div>
+                <div class="card-body">
+                    <!-- Форма для редактирования визита -->
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {{ form.as_p }}
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                            <a href="{% url 'visit_show_client' %}" class="btn btn-secondary">Назад к моим визитам</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

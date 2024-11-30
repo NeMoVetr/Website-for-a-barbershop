@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{% block title %} Мои посещения {% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-5">Мои посещения</h1>
+
+    <div class="text-center">
+        <a href="{% url 'book_visit' %}" class="btn btn-success">Записаться на новое посещение</a>
+    </div>
+
+    <div class="mt-5">
+
+        {% if html_df_data_visit == None or visits == None %}
+            <p class="text-center text-muted">У вас пока нет забронированных визитов.</p>
+        {% else %}
+            <!--таблица визитов -->
+            <h3>Список моих посещений</h3>
+            <div class="table-responsive">
+                {{ html_df_data_visit|safe }}
+            </div>
+
+            <!-- Кнопки для визитов со статусом Запланирована -->
+            <div class="mt-5">
+
+                {% if flag %}
+                    <h5>Редактирование запланированных посещений</h5>
+                {% endif %}
+
+                {% for visit in visits %}
+                    {% if visit.status == "Запланирована" %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ visit.employee }}</h5>
+                                <p class="card-text">
+                                    Номер телефона мастера: {{ visit.employee.phone_number }}<br>
+                                    Услуга: {{ visit.service }}<br>
+                                    Дата и время: {{ visit.date }} в {{ visit.time }} <br>
+                                    Зал: {{ visit.hall }}<br>
+                                    Время работы мастера: {{ visit.service.duration }} час<br>
+                                    Статус: {{ visit.status }}
+
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{% url 'visit_update_client' visit.id %}" class="btn btn-primary btn-sm">Редактировать</a>
+                                <a href="{% url 'visit_delete_client' visit.id %}" class="btn btn-danger btn-sm">Отменить визит</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

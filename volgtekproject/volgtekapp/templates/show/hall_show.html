@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block title %} Список залов {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Список залов</h1>
+    <div class="row">
+        {% if hall %}
+        {% for h in hall %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ h.name }}</h5>
+                    <p class="card-text">
+                        Описание: {{ h.description|default:"Нет описания" }}<br>
+                        Вместимость: {{ h.capacity }} человек <br>
+                        Местоположение: {{ h.location }}<br>
+                        График работы: {{ h.start_time }} - {{ h.end_time }}
+                    </p>
+                </div>
+
+                <div class="card-footer text-center">
+                    {% if user.is_staff %}
+                        <a href="{% url 'hall_update' h.id %}" class="btn btn-primary btn-sm">Редактировать</a> <br>
+                        <a href="{% url 'hall_delete' h.id %}" class="btn btn-danger btn-sm">Удалить</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="text-center text-muted">Залы отсутствуют</p>
+        {% endif %}
+    </div>
+    <div class="text-center mt-4">
+        {% if user.is_staff %}
+            <a href="{% url 'hall_add' %}" class="btn btn-success">Добавить новый зал</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

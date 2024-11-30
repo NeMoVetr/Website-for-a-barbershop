@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block title %} Список сотрудников {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Список сотрудников</h1>
+    <div class="row">
+        {% if employee %}
+        {% for e in employee %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ e }}</h5>
+                    <p class="card-text">
+                        Номер телефона: {{ e.phone_number }}<br>
+                        Должность: {{ e.position }} <br>
+                        Залы: {{ e.halls.all|join:", " }}<br>
+                        Услуги: {{ e.services.all|join:", " }}
+                    </p>
+                </div>
+
+                <div class="card-footer text-center">
+
+                <a href="{% url 'employee_update' e.id %}" class="btn btn-primary btn-sm">Редактировать</a> <br>
+                <a href="{% url 'employee_delete' e.id %}" class="btn btn-danger btn-sm">Удалить</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="text-center text-muted">Сотрудники отсутствуют</p>
+        {% endif %}
+    </div>
+    <div class="text-center mt-4">
+        {% if user.is_staff %}
+            <a href="{% url 'registration_employee' %}" class="btn btn-success">Добавить нового сотрудника</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

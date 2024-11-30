@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>{% block title %}Купить плойку для волос PROMOZER{% endblock %}</title>
+    <title>{% block title %}ВОЛГАТЕК - Парикмахерская {% endblock %}</title>
     <link rel="icon" href="https://volgtek.ru/upload/CNext/803/volgtek_site_logo.svg" type="image/png">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
@@ -18,371 +18,183 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'script/update_time_regarding_date.js' %}"></script>
 </head>
 <body>
-<!-- Навигация -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="https://volgtek.ru/upload/CNext/803/volgtek_site_logo.svg" alt="ВОЛГТЕК" title="ВОЛГТЕК" data-src>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}" style="font-size: 20px;">{{ user_name.username }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_service' %}" style="font-size: 20px;">Создать услугу</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'services' %}" style="font-size: 20px;">Услуги</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}" style="font-size: 20px;">Блог</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}" style="font-size: 20px;">Как купить</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}" style="font-size: 20px;">Клиентам</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}" style="font-size: 20px;">Контакты</a>
-                </li>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{%  url 'index' %}">
+                <img src="https://volgtek.ru/upload/CNext/803/volgtek_site_logo.svg" alt="ВОЛГТЕК" title="ВОЛГТЕК"
+                     style="width: 150px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
 
-            </ul>
-        </div>
-    </div>
-</nav>
-{% block content %}
-
-<!-- Основной контент -->
-<div class="container mt-5">
-    <h1 class="h3">Плойка с терморегулятором D25 турмалин PROMOZER</h1>
-    <div class="container">
-        <a href="#"> <small href="#">Главная</small></a>-
-        <a href="#"><small href="#">Каталог магазина ВОЛГТЕК</small></a> -
-        <a href="#"><small href="#">Профессиональные парикмахерские инструменты </small></a>-
-        <a href="#"><small href="#">Профессиональные плойки для завивки волос </small></a>-
-        <small href="#">Плойка для волос PROMOZER MZ-6611-25</small>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <!-- Изображение товара -->
-
-            <div class="image">
-                <div class="sticker">
-                    <div>
-                        <div class="sticker_khit"> ХИТ</div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="image-slider">
-                        <div class="thumbnails">
-                            <img class="thumbnail"
-                                 src="https://volgtek.ru/upload/resize_cache/iblock/ff1/500_500_140cd750bba9870f18aada2478b24840a/ff1935a70fce9e39dfc68152bc1d452c.jpg"
-                                 alt="Картинка 1">
-                            <img class="thumbnail"
-                                 src="https://volgtek.ru/upload/resize_cache/iblock/9e8/500_500_140cd750bba9870f18aada2478b24840a/9e88ed45b9e3c0b5c60270025a216b22.jpg"
-                                 alt="Картинка 2">
-                        </div>
-
-                        <img id="mainImage"
-                             src="https://volgtek.ru/upload/resize_cache/iblock/ff1/500_500_140cd750bba9870f18aada2478b24840a/ff1935a70fce9e39dfc68152bc1d452c.jpg"
-                             class="main-image" alt="Плойка с терморегулятором D25 турмалин PROMOZER">
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
-        <!-- Описание товара -->
-
-        <div class="col-md-6">
-            <div class="right_info">
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-right" style="color: gray">Артикул: 123456</p>
-                <a href="#"><img
-                        src="https://volgtek.ru/upload/resize_cache/iblock/f70/vj5yb46ngpehlf5exphe83bldk9p97bt/120_40_0/promozer_logo_200.jpg"
-                        alt="PROMOZER"></a>
-            </div>
-
-
-            <div class="container">
-
-
-                <h2 class="h4" style="padding: 50px 0px 0px 0px;">Цена: 1 540 руб.</h2>
-                <div class="basket" style="padding: 50px 0px 20px 0px;">
-                    <button class="btn btn-primary btn-lg">Хочешь дешевле</button>
-                </div>
-                <i class="fa fa-check" aria-hidden="true"></i>
-                <a href="#">
-                    <span style="color: gray">Много</span>
-                </a>
-
-
-                <i class="fa fa-window-maximize" aria-hidden="true"></i>
-                <a href="#">
-                    <span style="color: gray">Нашли дешевле?</span>
-                </a>
-                <div class="basket">
-                    <button class="btn btn-primary btn-lg">В корзину</button>
-                </div>
-                <i class="fa fa-truck" aria-hidden="true"></i>
-                <a href="#">
-
-                    <span style="color: gray">Рассчитать доставку</span>
-                </a>
-                <div class="characteristics_cap">
-                    <p class="h6">Характеристики</p>
-                    <p>Бренд <br>Promozer</p>
-
-                    <p>Вид инструмента <br>Плойка</p>
-                    <p>Технологии <br> Титановое покрытие, Турмалиновое покрытие</p>
-
-                    <p>Питание <br> Сеть</p>
-
-
-                    <a href="#">Все характеристики</a>
-
-                    <div class="container">
-                        <small style="color: gray">Мы осуществляем доставку во <a href="#">все регионы России</a>, в том
-                            числе в
-                            отделения
-                            Почты России.
-                            Отгрузка производится на следующий рабочий день после оплаты.</small>
-                        <div>
-                            <small class="small" style="color: gray"> Весь товар является <a href="#">оригинальным</a>,
-                                имеет подтверждающие качество
-                                сертификаты и декларации.
-                            </small>
-                        </div>
-                        <div>
-                            <small class="small" style="color: gray"> <b>Обмен и возврат товара </b>в течение 14
-                                дней</small>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-lg" style="padding: 50px 0px 0px 0px;">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="inner">
-                            <div class="img_inner">
-                                <a href="#">
-                                    <img src="https://volgtek.ru/upload/uf/91e/91e10ac2230f41b394eb9071fadddc20.png"
-                                         alt="Весь товар сертифицирован" title="Весь товар сертифицирован">
-
-                                </a>
-
-                            </div>
-                            <div class="title"><a href="#" style="color: gray">Весь товар сертифицирован</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="inner">
-                            <div class="img_inner">
-                                <a href="#">
-                                    <img src="https://volgtek.ru/upload/uf/801/801d26b4e01d4642746f2ca3966be4bd.png"
-                                         alt="Официальная гарантия от производителя"
-                                         title="Официальная гарантия от производителя">
-                                </a>
-                            </div>
-                            <div class="title"><a href="#" style="color: gray">Официальная гарантия от производителя</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="inner">
-                            <div class="img_inner">
-                                <a href="#">
-                                    <img src="https://volgtek.ru/upload/uf/6fe/6febb368711891288b6089a04dcb5f93.png"
-                                         alt="Доставка в любой город России" title="Доставка в любой город России">
-                                </a>
-                            </div>
-                            <div class="title"><a href="#" style="color: gray">Доставка в любой город России</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Дополнительная информация -->
-        <div class="row mt-4">
-            <div class="col-md-12">
-                <h3 class="h3">Описание</h3>
-                <h4 class="h2">Плойка для волос Promozer MZ-6611 25 мм для создания локонов</h4>
-                <p>Профессиональная плойка Promozer для локонов MZ-6611 обладает следующими преимуществами: </p>
-                <ul>
-                    <li>Длинный профессиональный прорезиненный вращающийся шнур 2,5 м</li>
-                    <li>Керамический нагревательный РТС элемент, очень быстро выводит плойку на рабочую температуру</li>
-                    <li>Титаново-турмалиновое покрытие дает легкое скольжение волоса по полотну</li>
-                    <li>Турмалин, включенный в состав покрытия при нагреве будет выделять отрицательно заряженные ионы,
-                        таким образом Вы получаете функцию ионизации волос, а это значит Ваши волосы будут блестящими и
-                        увлажненными
+                    <!-- Ссылки на Залы и Услуги доступны всем зарегистрированным пользователям -->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'hall_show' %}" style="font-size: 20px;">Залы</a>
                     </li>
-                    <li>Установленный в окончании плойки кончик из термостойкого пластика, не нагревается</li>
-                    <li>Механическая кнопка включения плойки позволяет переключить две температуры нагрева - 180-210
-                        градусов C, является самым простым и надежным механизмом
+
+
+                    {% endif %}
+
+                    <!-- Условное отображение для клиентов -->
+                    {% if request.user.is_authenticated and request.user.client %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'client_profile' %}" style="font-size: 20px;">{{ request.user.username }}</a>
                     </li>
-                    <li>Удобное не скользящее покрытие ручки</li>
-                    <li>Общая для плойки 37 см, длина нагревательной части 15 см, диаметр рабочего полотна - 25 мм</li>
-                    <li>При использовании помните общие простые рекомендации: не нужно держать локон более 10 секунд и
-                        всегда используйте термозащитные средства для волос. Это позволит достигнуть гарантированного
-                        эффекта от использования плоек и щипцов для волос.
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'visit_show_client' %}" style="font-size: 20px;">Мои посещения</a>
                     </li>
+                    {% endif %}
+
+                    <!-- Условное отображение для сотрудников -->
+                    {% if request.user.employee %}
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'service_show' %}" style="font-size: 20px;">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee_profile' %}" style="font-size: 20px;">{{ request.user.username }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'visit_show_employee' %}" style="font-size: 20px;">История
+                            посещения</a>
+                    </li>
+                    {% endif %}
+
+
+                    <!-- Ссылки для администраторов -->
+                    {% if user.is_staff %}
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'service_show' %}" style="font-size: 20px;">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee_show' %}" style="font-size: 20px;">Все сотрудники</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'visit_show_admin' %}" style="font-size: 20px;"> Посещение клиентов</a>
+                    </li>
+
+
+                    {% endif %}
+
+                     <!-- Ссылки для зарегистрированных пользователей -->
+                    {% if user.is_authenticated %}
+                    {% block exit %}
+                    <li class="nav-item">
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link" style="font-size: 20px;">Выйти</button>
+                        </form>
+                    </li>
+                    {% endblock %}
+
+                    {% endif %}
+
+
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container mt-5">
-        <h3 class="h3">Характеристики</h3>
-        <div class="table-responsive">
-            <h6>Основные параметры</h6>
-            <div class="table">
-                {{ context_index.df_basic_parameters|safe }}
-            </div>
-        </div>
-        <div class="table-responsive">
-            <h6>Размер, вес, объем</h6>
-            <div class="table">
-                {{ context_index.df_size_weight_volume|safe }}
-            </div>
-        </div>
-        <div class="table-responsive">
-            <h6>Гарантия, срок годности</h6>
-            <div class="table">
-                {{ context_index.df_warranty_expiration_date|safe }}
-            </div>
-        </div>
-        <div class="table-responsive">
-            <h6>Габариты упаковки</h6>
-            <div class="table">
-                {{ context_index.df_package_dimensions|safe }}
-            </div>
-        </div>
+    </nav>
 
+    {% block content %}
+
+    <!-- Основной контент -->
+
+    <!-- Поиск -->
+    <div class="container my-4">
+        <form method="get" action="{% url 'index' %}">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Поиск по услугам" name="search"
+                       value="{{ search_term }}">
+                <button class="btn btn-primary" type="submit">Поиск</button>
+            </div>
+        </form>
     </div>
 
-    <!-- Сопутствующие товары -->
+    <!-- Список сотрудников -->
     <div class="container mt-5">
-        <h3 class="h3">Сопутствующие товары</h3>
-        <ul class="tab-content">
-            <li class="col-md-3">
-                <div class="card">
-                    <div class="image">
-                        <div class="sticker">
-                            <div>
-                                <div class="sticker_khit"> ХИТ</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#"><img
-                            src="https://volgtek.ru/upload/iblock/8b2/nesmyvaemyy_krem_sprey_dlya_volos_15_1_ollin_perfect_hair.jpg"
-                            class="card-img-top" alt="Сопутствующий товар 1"></a>
-                    <div class="card-body text-center">
-                        <a href="#">
-                            <h6 class="card-title h6">Несмываемый крем-спрей для волос 15 в 1 OLLIN Perfect Hair, 250
-                                мл</h6>
-                        </a>
-                        <div class="rating1">
-                            <div class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <span>Много</span>
+        <div class="welcome-section">
+            <h1 class="welcome-title">Добро пожаловать в парикмахерскую ВОЛГАТЕК!</h1>
+            <p class="welcome-text">
+                Мы рады видеть вас на нашем сайте! Здесь стиль встречается с профессионализмом,
+                а индивидуальный подход — с творчеством.
+            </p>
+            <p class="welcome-text">
+                <strong>Почему выбирают ВОЛГАТЕК?</strong><br>
+                🌟 <em>Команда мастеров-профессионалов</em>: каждый из наших сотрудников обладает опытом,
+                вдохновением и талантом.<br>
+                🌟 <em>Широкий спектр услуг</em>: стрижки, окрашивание, укладки, уход за волосами —
+                все, чтобы подчеркнуть вашу уникальность.<br>
+                🌟 <em>Уютная атмосфера</em>: мы создаем пространство, где вы можете расслабиться и насладиться процессом.
+            </p>
+            <p class="welcome-text">
+                <span class="welcome-highlight">Мы гордимся тем, что используем только дорогое и профессиональное оборудование</span>,
+                которое гарантирует качество результата для каждого клиента.
+                Кроме того, в нашей компании работают исключительно квалифицированные специалисты,
+                прошедшие специализированные курсы переподготовки, организованные нашей компанией.
+            </p>
+            <p class="welcome-text">
+                Записаться на услугу легко — просто выберите необходимую услугу, и мы с радостью позаботимся о вашем образе.
+            </p>
+        </div>
+        <div class="container mt-5">
+            <h2>Предоставляемые услуги</h2>
+            <div class="row">
+                {% for employee in employees %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ employee.user.get_full_name }}</h5>
+                            <p class="card-text">Телефон: {{ employee.phone_number }}</p>
+                            <p class="card-text">Должность: {{ employee.position }}</p>
+                            <p class="card-text">Зал:
+                                {% for hall in employee.halls.all %}
+                                {{ hall.name }}
+                                {% endfor %}
+                            </p>
+                            <p class="card-text">Услуга:
+                                {% for service in employee.services.all %}
+                                {{ service.name }}
+                                {% endfor %}
+                            </p>
+                            <p class="card-text">Стоимость:
+                                {% for service in employee.services.all %}
+                                {{ service.price }}
+                                {% endfor %}
+                                руб.
+                            </p>
+                            <p class="card-text">Продолжительность:
+                                {% for service in employee.services.all %}
+                                {{ service.duration }}
+                                {% endfor %} час
 
+                            </p>
                         </div>
-                        <p class="card-text h6">598 руб.</p>
-                        <a href="#" class="btn btn-primary">Подробнее</a>
                     </div>
                 </div>
-            </li>
-            <li class="col-md-3">
-                <div class="card">
-                    <div class="image">
-                        <div class="sticker">
-                            <div>
-                                <div class="sticker_khit"> ХИТ</div>
-                            </div>
-                        </div>
-                    </div>
+                {% endfor %}
 
-                    <a href="#"><img src="https://volgtek.ru/upload/iblock/1c6/1c69a53c811fe09c2c55b3b072be3ef9.jpg"
-                                     class="card-img-top" alt="Сопутствующий товар 1"></a>
-                    <div class="card-body text-center">
-                        <a href="#">
-                            <h6 class="card-title h6">Несмываемый спрей-маска для волос 10 в 1 FarmaVita Onely The One &
-                                Only 150 мл</h6>
-                        </a>
-                        <div class="rating1">
-                            <div class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <span>Мало</span>
-
-                        </div>
-                        <p class="card-text h6">2 100 руб.</p>
-                        <a href="#" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-            </li>
-            <!-- Добавить больше карточек, если нужно -->
-        </ul>
-    </div>
-    {% endblock %}
-    <a href="#" class="text-center">
-        <img src="https://volgtek.ru/upload/iblock/7d8/psotqhfzvjzmcn7pvqzd1qtdo4h9sovz/pokupai.jpg"></im>
-    </a>
-
-    <footer class="footer mt-auto py-3 bg-dark text-white">
-        <div class="container center">
-            <span>&copy; 2000-{% now "Y" %} Интернет-магазин инструментов, косметики и оборудования для красоты ВОЛГТЕК</span>
-            <div class="text-right">
-                <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-                <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
-                <i class="fa fa-cc-visa" aria-hidden="true"></i>
-                <i class="fa fa-cc-paypal" aria-hidden="true"></i>
             </div>
         </div>
+
+        {% endblock %}
+    </div>
+
+
+    <!-- Подвал сайта -->
+    <footer class="bg-light text-center py-3">
+        <p>&copy; {% now "Y" %} ВОЛГТЕК</p>
     </footer>
-    <script>
-        const mainImage = document.getElementById('mainImage');
-        const thumbnails = document.querySelectorAll('.thumbnail');
 
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function () {
-                mainImage.src = this.src; // Переключаем картинку на основную
-            });
-        });
-    </script>
+
 
 </body>
 </html>

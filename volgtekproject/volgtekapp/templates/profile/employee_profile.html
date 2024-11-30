@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block title %} Профиль сотрудника {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Профиль сотрудника</div>
+                <div class="card-body">
+                    <h5 class="card-title">Информация о сотруднике</h5>
+                    <p class="card-text">Логин: {{ employee.username }}</p>
+                    <p class="card-text">Имя: {{ employee.first_name }}</p>
+                    <p class="card-text">Фамилия: {{ employee.last_name }}</p>
+                    <p class="card-text">Email: {{ employee.email }}</p>
+                    <p class="card-text">Телефон: {{ employee_form.phone_number }}</p>
+                    <p class="card-text">Должность: {{ employee_form.position }}</p>
+                    <p class="card-text">Залы в которых работает:
+                        {% for hall in employee_form.halls.all %}
+                            {{ hall }}
+                        {% endfor %}</p>
+                    <p class="card-text">Предоставляемые услуги:
+                        {% for service in employee_form.services.all %}
+                        {{ service }}
+                        {% endfor %}</p>
+
+                    <form action="{% url 'logout' %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Выйти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Регистрация сотрудника</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <p>
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                            {% if form.username.errors %}
+                        <div class="text-danger">
+                            {{ form.username.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ form.first_name.label_tag }}
+                            {{ form.first_name }}
+                            {% if form.first_name.errors %}
+                        <div class="text-danger">
+                            {{ form.first_name.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ form.last_name.label_tag }}
+                            {{ form.last_name }}
+                            {% if form.last_name.errors %}
+                        <div class="text-danger">
+                            {{ form.last_name.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                        <div class="text-danger">
+                            {{ form.email.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <!-- Дополнительные поля для данных сотрудника -->
+                        <p>
+                            {{ employee_data_form.phone_number.label_tag }}
+                            {{ employee_data_form.phone_number }}
+                            {% if employee_data_form.phone_number.errors %}
+                        <div class="text-danger">
+                            {{ employee_data_form.phone_number.errors }}
+                        </div>
+                        {% endif %}
+
+
+                        <p>
+                            {{ employee_data_form.position.label_tag }}
+                            {{ employee_data_form.position }}
+                            {% if employee_data_form.position.errors %}
+                        <div class="text-danger">
+                            {{ employee_data_form.position.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ employee_data_form.department.label_tag }}
+                            {{ employee_data_form.department }}
+                            {% if employee_data_form.department.errors %}
+                        <div class="text-danger">
+                            {{ employee_data_form.department.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                       <p>
+                            {{ employee_data_form.halls.label_tag }}
+                            {{ employee_data_form.halls }}
+                            {% if employee_data_form.halls.errors %}
+                        <div class="text-danger">
+                            {{ employee_data_form.halls.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ employee_data_form.services.label_tag }}
+                            {{ employee_data_form.services }}
+                            {% if employee_data_form.services.errors %}
+                        <div class="text-danger">
+                            {{ employee_data_form.services.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ form.password1.label_tag }}
+                            {{ form.password1 }}
+                            {% if form.password1.errors %}
+                        <div class="text-danger">
+                            {{ form.password1.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <p>
+                            {{ form.password2.label_tag }}
+                            {{ form.password2 }}
+                            {% if form.password2.errors %}
+                        <div class="text-danger">
+                            {{ form.password2.errors }}
+                        </div>
+                        {% endif %}
+                        </p>
+
+                        <button type="submit" class="btn btn-primary">Зарегистрировать</button>
+                        <a href="{% url 'employee_show' %}" class="btn btn-secondary">Отмена</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block title %} Удаление услуги {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Удаление услуги</div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <p class="text-warning">Вы уверены, что хотите удалить выбранную услугу? Это действие нельзя
+                            отменить.</p>
+                        <p><strong> Название услуги:</strong> {{ service.name }}</p>
+                        <p><strong> Описание услуги:</strong> {{ service.description }}</p>
+                        <p><strong> Цена услуги:</strong> {{ service.price }} </p>
+                        <p><strong> Длительность услуги:</strong> {{ service.duration }}</p>
+
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                        <a href="{% url 'service_show' %}" class="btn btn-secondary">Отмена</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block title %} Удаление визита {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Удаление визита</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Вы уверены, что хотите удалить этот визит? Это действие нельзя
+                        отменить.</h5>
+                    <p><strong>Мастер:</strong> {{ visit.employee }}</p>
+                    <p><strong>Услуга:</strong> {{ visit.service }}</p>
+                    <p><strong>Дата и время:</strong> {{ visit.date }} в {{ visit.time }}</p>
+                    <p><strong>Зал:</strong> {{ visit.hall }}</p>
+                    <p><strong>Цена:</strong> {{ visit.service.price }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Удалить визит</button>
+                    </form>
+                    <a href="{% url 'visit_show_client' %}" class="btn btn-secondary mt-2">Отмена</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
