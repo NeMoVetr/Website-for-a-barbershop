@@ -36,7 +36,7 @@
 1. Клонируйте репозиторий и перейдите в каталог проекта:
 
    ```bash
-   git clone (https://github.com/NeMoVetr/Website-for-a-barbershop)
+   git clone https://github.com/NeMoVetr/Website-for-a-barbershop
    cd volgtekproject
    ```
 
